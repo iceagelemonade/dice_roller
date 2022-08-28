@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Dice Roller</title>
+	<link rel=¨stylesheet¨ type=¨text/css¨ href=¨style.css¨>
+	<script src="script.js"></script>
+</head>
+
+<h1>DICE ROLLER<span class="buttons"><button type="button" class="linebutton help" id="help" onclick="openHelp()">?</button</span></h1>
+  <div class="notes" id="notes">
+    <small><a href="#" onclick="closeHelp()">CLOSE</a></small>
+    <h3>Dice Roller Instructions</h3>
+<p class="instructions">
+This simple tool allows you to generate random numbers between a range of 1 and a number of your choosing <i>(Number of Sides)</i>, 1 or multiple times <i>(Number of rolls)</i>. Simply fill out the two boxes and click the roll button. Beneath the fields you fill out will be each number in the ordered they were chosen, and above the fields will be the sum of all the numbers. <p /><p class="instructions">
+Optionally, you can change the drop down selector to the right of the Number of Rolls field to the following options:<br />
+  <b>Normal</b> – <i>(selected by default)</i> Numbers are presented as stated above<br />
+  <b>Advantage</b> – Instead of displaying the total, only the highest value generated will be shown. <i>(The ordered list will still display below.)</i> <br />
+  <b>Disdvantage</b> – Instead of displaying the total, only the lowest value generated will be shown. <i>(The ordered list will still display below.)</i> <p /><p class="instructions">
+You can also generate random numbers from different ranges by adding and removing lines. When doing so you will see the total of all results from all ranges as well as the total results from each individual range. Any range that has Advantage or Disadvantage selected will only use the highest or lowest number for that range in the complete total.
+    <br />
+  <button type="button" class="linebutton green"tabindex="-1">+</button> – Adds an additional line for an additional range. <i>(Max. 5)</i> <br />
+  <button type="button" class="linebutton red"tabindex="-1">-</button> – Removes the last line added. <i>(Min. 1)</i>
+  <h1><button type="button" onclick="closeHelp()">CLOSE</button></h1>
+    
+ 
+  
+  
+</div>
+
+<p id="allTotal"></p>
+<p id="line0">
+
+<div class="buttons">
+  <button type="button" class="linebutton green" id="plus" tabindex="-1" onclick="addLine()">+</button><button class="linebutton gray" id= "minus" tabindex="-1" onclick="removeLine()">-</button>
+
+  </div>   
+
+ 
+    
+<span class="err" id="esides0">*</span><input type="text" id="sides0" name="sides0" placeholder="Number of Sides (max. 1000)" autofocus>
+  <span class="err" id="erolls0">&#8224;</span><input type="text" id="rolls0" name="rolls0" placeholder="Number of Rolls (max. 100)">
+ <select name="roll-type" id="type0">
+  <option value="nor">Normal</option>
+  <option value="adv">Advantage</option>
+  <option value="dis">Disadvantage</option>
+</select>
+
+  <div class="error-text" id="error-sides0"></div>
+  <div class="error-text" id="error-rolls0">
+  </div>
+</p>
+<p id="line1">
+  <span class="err" id="esides1">*</span><input type="text" id="sides1" name="sides1" placeholder="Number of Sides (max. 1000)">
+
+  <span class="err" id="erolls1">&#8224;</span><input type="text" id="rolls1" name="rolls1" placeholder="Number of Rolls (max. 100)"> 
+<select name="roll-type" id="type1">
+  <option value="nor">Normal</option>
+  <option value="adv">Advantage</option>
+  <option value="dis">Disadvantage</option>
+</select>
+  <div class="error-text" id="error-sides1"></div>
+  <div class="error-text" id="error-rolls1">
+  </div>
+</p>
+<p id="line2">
+  <span class="err" id="esides2">*</span><input type="text" id="sides2" name="sides2" placeholder="Number of Sides (max. 1000)">
+  <span class="err" id="erolls2">&#8224;</span><input type="text" id="rolls2" name="rolls2" placeholder="Number of Rolls (max. 100)">
+  <select name="roll-type" id="type2">
+  <option value="nor">Normal</option>
+  <option value="adv">Advantage</option>
+  <option value="dis">Disadvantage</option>
+</select>
+    <div class="error-text" id="error-sides2"></div>
+  <div class="error-text" id="error-rolls2">
+  </div>
+</p>
+<p id="line3">
+  <span class="err" id="esides3">*</span><input type="text" id="sides3" name="sides3" placeholder="Number of Sides (max. 1000)">
+  <span class="err" id="erolls3">&#8224;</span><input type="text" id="rolls3" name="rolls3" placeholder="Number of Rolls (max. 100)">
+<select name="roll-type" id="type3">
+  <option value="nor">Normal</option>
+  <option value="adv">Advantage</option>
+  <option value="dis">Disadvantage</option>
+</select>
+    <div class="error-text" id="error-sides3"></div>
+  <div class="error-text" id="error-rolls3">
+  </div>
+</p>
+<p id="line4">
+  <span class="err" id="esides4">*</span><input type="text" id="sides4" name="sides4" placeholder="Number of Sides (max. 1000)">
+  <span class="err" id="erolls4">&#8224;</span><input type="text" id="rolls4" name="rolls4" placeholder="Number of Rolls (max. 100)">
+<select name="roll-type" id="type4">
+  <option value="nor">Normal</option>
+  <option value="adv">Advantage</option>
+  <option value="dis">Disadvantage</option>
+</select>
+    <div class="error-text" id="error-sides4"></div>
+  <div class="error-text" id="error-rolls4">
+  </div>
+</p>
+<p class="button"><button type="button" id="diceroll" onclick="test1()">ROLL</button></p>
+<p id="rollsInOrder"></p>
+</html>
